@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+}
+
+body {
+  background-color: #202026;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  height: 80px;
+  width: 100%;
+}
+
+.logo img {
+  padding: 5px;
+  width: 64px;
+}
+
+.menu-itens img { 
+  width: 25px;
+}
+
+.menu-itens a {
+  margin-left: 30px;
+}
+
+.content {
+  height: calc(100vh - 80px); /* tirando o tamanho do menu para não ter scroll */
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.left-side h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #00C0AF;
+}
+
+.left-side p {
+  color: white;
+  margin-bottom: 60px;
+}
+
+.left-side span {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.left-side a {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color:#00C0AF;
+  color: white;
+  width: fit-content;
+  border-radius: 5px;
+  padding: 15px 20px;
+  transition: 0.6s;
+}
+
+.left-side a:hover {
+  background-color: #00c0b0b9;
+}
+
+.right-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9a9a91a;
+  border-radius: 20px;
+}
+
+.content-slide {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+}
+  
+.labels {
+  position: absolute;
+  bottom: 20px;
+  left: 73%;
+  transform: translate(-50%);
+  display: flex;
+}
+
+.labels label {
+  width: 45px;
+  height: 15px;
+  border: 1px solid white;
+  margin: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.labels label:hover {
+  background: white;
+}
+
+.slides input {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  width: 400%; /* por serem 4 imagens, 4x100% */
+  height: 100%;
+}
+
+.slide {
+  width: 25%; /* por serem 4 imagens, dividido por 100% */
+  transition: 0.6s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#slide1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+  margin-left: -25%;
+}
+
+#slide3:checked ~ .s1 {
+  margin-left: -50%;
+}
+
+#slide4:checked ~ .s1 {
+  margin-left: -75%;
+}
+
+@media screen and (max-width: 1075px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+    min-width: 450px;
+  }
+
+  .labels {
+    position: relative;
+    margin-bottom: 15px;
+    bottom: 30px;
+  }
+
+  .right-side {
+    margin-bottom: 20px;
+  }
+
+  .slide img {
+    padding: 40px;
+  }
+
+  .left-side a {
+  margin-bottom: 25px;
+  }
+
+  .left-side {
+    min-width: 400px;
+  }
+
+  .menu {
+  min-width: 540px;
+  }
+
+  .left-side h1 {
+    min-width: 540px;
+    margin-right: 10px;
+    }
+}
